@@ -33,7 +33,7 @@ Optional / Future Enhancements:
 ## 🔎 Installation & Setup
 
 1. **Clone the repository**
-git clone https://github.com/YourUsername/TextCleanerTool.git
+git clone https://github.com/VihanMali/TextCleanerTool.git
 
 2. Navigate to the src folder
 cd TextCleanerTool/src
@@ -47,16 +47,16 @@ java TextEditorTool
 ## 💎 Demo Usage
 
 Enter your text (type 'END' to finish):
-> This  is    some    messy text.
+ this  is    some    messy text.
 
-> It has extra spaces, empty lines, and inconsistent case.
-> END
+ It has extra spaces, empty lines, and inconsistent case.
+ END
 
-Remove extra spaces? (0-No, 1-Yes): 1
-Remove extra lines? (0-No, 1-Yes): 1
-Convert to lowercase? (0-No, 1-Yes): 0
-Convert to uppercase? (0-No, 1-Yes): 0
-Capitalize first letter of first line? (0-No, 1-Yes): 1
+-Remove extra spaces? (0-No, 1-Yes): 1
+-Remove extra lines? (0-No, 1-Yes): 1
+-Convert to lowercase? (0-No, 1-Yes): 0
+-Convert to uppercase? (0-No, 1-Yes): 0
+-Capitalize first letter of first line? (0-No, 1-Yes): 1
 
 Here is your edited text:
 
