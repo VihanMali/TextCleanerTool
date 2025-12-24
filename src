@@ -1,0 +1,83 @@
+import java.util.Scanner;
+import java.util.LinkedHashSet;
+import java.util.Arrays;
+import java.util.Set;
+
+public class Text_Editor_Tool {
+
+    public static String removeExtraSpaces(String text) {
+        if (text == null) return "";
+        return text.trim().replaceAll("\\s+", " ");
+    }
+
+    public static String removeExtraLines(String text) {
+        if (text == null) return "";
+        return text.replaceAll("(?m)^\\s*$\\n", "");
+    }
+
+    public static String toLowerCase(String text) {
+        if (text == null) return "";
+        return text.toLowerCase();
+    }
+
+    public static String toUpperCase(String text) {
+        if (text == null) return "";
+        return text.toUpperCase();
+    }
+
+    public static String capitalizeFirstLetterOfFirstLine(String text) {
+        if (text == null || text.isEmpty()) return text;
+        String[] lines = text.split("\\n", -1);
+        if (lines[0].isEmpty()) return text;
+        char firstChar = Character.toUpperCase(lines[0].charAt(0));
+        lines[0] = firstChar + lines[0].substring(1);
+        return String.join("\n", lines);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Ask the user for the text first
+        System.out.println("Enter your text (type 'END' on a new line to finish):");
+        StringBuilder sb = new StringBuilder();
+        while (true) {
+            String line = sc.nextLine();
+            if (line.equals("END")) break;
+            sb.append(line).append("\n");
+        }
+        String text = sb.toString();
+
+        //  Ask user for editing options
+        System.out.println("Remove extra spaces? (0-No, 1-Yes): ");
+        int spaceChoice = sc.nextInt();
+        sc.nextLine(); 
+
+        System.out.println("Remove extra lines? (0-No, 1-Yes): ");
+        int lineChoice = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Convert to lowercase? (0-No, 1-Yes): ");
+        int lowerChoice = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Convert to uppercase? (0-No, 1-Yes): ");
+        int upperChoice = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Capitalize first letter of first line? (0-No, 1-Yes): ");
+        int capChoice = sc.nextInt();
+        sc.nextLine();
+
+        // Apply changes
+        if (spaceChoice == 1) text = removeExtraSpaces(text);
+        if (lineChoice == 1) text = removeExtraLines(text);
+        if (lowerChoice == 1) text = toLowerCase(text);
+        if (upperChoice == 1) text = toUpperCase(text);
+        if (capChoice == 1) text = capitalizeFirstLetterOfFirstLine(text);
+        
+        //results
+        System.out.println("\nHere is your edited text:\n");
+        System.out.println(text);
+        sc.close();
+    }
+}
